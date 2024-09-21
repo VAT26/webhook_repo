@@ -14,8 +14,9 @@ def api_msg():
     
     if request.headers['Content-Type']=='application/json':
         data=request.json
-        info=data['author','timestamp','branches_url']
-        client['my_db']['req'].insert_one(info)        
+                    
+        client['my_db']['req'].insert_one(data) 
+              
         return json.dumps(data)
     
 
